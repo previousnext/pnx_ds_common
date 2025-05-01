@@ -1,0 +1,21 @@
+{
+    "name": "previousnext/ds-common-drupal",
+    "type": "drupal-module",
+    "require": {
+        "drupal/components": "^3",
+        "drupal/dex_console": "^1",
+        "drupal/pinto": "^0",
+        "drupal/pinto_block": "^0.2",
+        "previousnext/ds-common": "*"
+    },
+    "repositories": {
+        "drupal": {
+            "type": "composer",
+            "url": "https://packages.drupal.org/8"
+        }
+    },
+    "license": "proprietary",
+    "conflict": {
+        "drupal/pinto": "<0.5.0"
+    }
+}

@@ -1,0 +1,18 @@
+services:
+  _defaults:
+    autoconfigure: true
+    autowire: true
+
+  PreviousNext\Ds\Common\BundleClass\Command\BundleClassHealthCheck:
+    tags:
+      - { name: console.command }
+
+  Drupal\pnx_ds_common\Components\PnxDsCommonComponentsRegistry:
+    decorates: components.registry
+    parent: components.registry
+
+  Drupal\pnx_ds_common\Theme\ThemeRegistry:
+    decorates: 'theme.registry'
+    parent: 'theme.registry'
+    calls:
+      - [setPintoHookTheme, ['%pinto.internal.hook_theme%']]

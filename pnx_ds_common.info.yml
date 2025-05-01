@@ -1,0 +1,13 @@
+name: Common DS
+type: module
+description: PreviousNext Common Objects.
+core_version_requirement: ^11.1
+php: 8.2
+dependencies:
+  - components:components # @todo: rework to remove dep.
+  - dex_console:dex_console
+  - pinto:pinto
+  - pinto_block:pinto_block
+#components:
+#  namespaces:
+#    pnx-common: /../vendor/previousnext/common-lib
