@@ -1,5 +1,5 @@
 {
-    "name": "previousnext/ds-common-drupal",
+    "name": "previousnext/pnx_ds_common",
     "type": "drupal-module",
     "require": {
         "drupal/components": "^3",
