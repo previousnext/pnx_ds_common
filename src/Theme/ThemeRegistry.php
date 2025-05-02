@@ -22,7 +22,7 @@ final class ThemeRegistry extends Registry {
    */
   private array $pintoThemeHookIds = [];
 
-  public function setPintoHookTheme(array $pintoHookTheme) {
+  public function setPintoHookTheme(array $pintoHookTheme): void {
     $this->pintoThemeHookIds = \array_keys($pintoHookTheme);
   }
 
