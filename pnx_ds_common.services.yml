@@ -3,10 +3,6 @@ services:
     autoconfigure: true
     autowire: true
 
-  PreviousNext\Ds\Common\BundleClass\Command\BundleClassHealthCheck:
-    tags:
-      - { name: console.command }
-
   Drupal\pnx_ds_common\Components\PnxDsCommonComponentsRegistry:
     decorates: components.registry
     parent: components.registry
