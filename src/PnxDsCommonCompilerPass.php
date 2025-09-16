@@ -8,9 +8,6 @@ use PreviousNext\Ds\Common\List\CommonLists;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 
-/**
- * Service provider.
- */
 final class PnxDsCommonCompilerPass implements CompilerPassInterface {
 
   public function process(ContainerBuilder $container): void {
