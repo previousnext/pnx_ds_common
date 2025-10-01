@@ -11,6 +11,8 @@ use PreviousNext\Ds\Common\Utility;
 
 final class PnxCommonHooks {
 
+  public const RENDER_ARRAY_KEY_TO_TWIG_TYPE = '__twigTypeVar';
+
   /**
    * Implements hook_system_info_alter().
    */
@@ -27,6 +29,19 @@ final class PnxCommonHooks {
       // '/' indicates relative to DRUPAL_ROOT, not disk-root.
       $packageRoot = \realpath(\dirname($fileName) . '/..');
       $info['components']['namespaces'][Utility\Twig::NAMESPACE] = '/' . Utility\Twig::computePathFromDrupalRootTo($packageRoot);
+    }
+  }
+
+  /**
+   * Implements hook_preprocess().
+   *
+   * @phpstan-param array<string, mixed> $variables
+   */
+  #[Hook('preprocess')]
+  public function preprocess(array &$variables): void {
+    if (\array_key_exists(static::RENDER_ARRAY_KEY_TO_TWIG_TYPE, $variables) && ($variables['type'] ?? NULL) === NULL) {
+      // Can't set '#type' on render array so we juggle variable names.
+      $variables['type'] = $variables[static::RENDER_ARRAY_KEY_TO_TWIG_TYPE];
     }
   }
 
