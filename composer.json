@@ -10,10 +10,24 @@
         "previousnext/ds-common": "*",
         "previousnext/ids-tools": "*"
     },
+    "require-dev": {
+        "mockery/mockery": "^1.6",
+        "phpstan/phpstan-mockery": "^2.0"
+    },
     "repositories": {
         "drupal": {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Drupal\\pnx_ds_common\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "PreviousNext\\PnxDsCommon\\Tests\\": "Tests"
         }
     },
     "license": "proprietary",

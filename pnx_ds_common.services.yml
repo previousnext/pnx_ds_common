@@ -12,3 +12,5 @@ services:
     parent: 'theme.registry'
     calls:
       - [setPintoHookTheme, ['%pinto.internal.hook_theme%']]
+
+  Drupal\pnx_ds_common\Menu\MenuToMenuTree: ~
