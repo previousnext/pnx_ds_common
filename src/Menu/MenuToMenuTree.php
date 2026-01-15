@@ -41,6 +41,8 @@ final class MenuToMenuTree {
 
     $tree = $this->menuTree->load($specification->menuName, $parameters);
     $tree = $this->menuTree->transform(tree: $tree, manipulators: $specification->manipulators);
+
+    /** @var array{"#cache": array<mixed>, "#items"?: array<MenuItem>} $menuBuild */
     $menuBuild = $this->menuTree->build($tree);
 
     // Map the render elements from build().
@@ -70,7 +72,7 @@ final class MenuToMenuTree {
             $menuTree[] = $below;
           }
         }
-      })($menuBuild['#items'])),
+      })($menuBuild['#items'] ?? [])),
     );
 
     return new MenuTreeResult(
