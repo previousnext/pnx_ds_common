@@ -1,7 +1,6 @@
 {
     "name": "previousnext/pnx_ds_common",
     "type": "drupal-module",
-    "version": "0.0.1",
     "require": {
         "drupal/components": "^3",
         "drupal/dex_console": "^1",
