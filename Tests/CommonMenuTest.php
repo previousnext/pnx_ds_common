@@ -33,7 +33,7 @@ final class CommonMenuTest extends TestCase {
 
     // \PreviousNext\Ds\Common\Atom\Link\Link will reach out to container:
     $container = new ContainerBuilder();
-    $container->set(PintoMapping::class, new PintoMapping([], [], [], [], []));
+    $container->set(PintoMapping::class, new PintoMapping([], [], [], [], [], []));
     \Drupal::setContainer($container);
 
     $menuTree->expects('build')->andReturn([
