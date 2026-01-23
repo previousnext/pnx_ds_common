@@ -14,7 +14,7 @@ use PreviousNext\Ds\Common\Vo\MenuTree\MenuTrees;
 final class MenuTreeResult {
 
   /**
-   * @phpstan-param \SplObjectStorage<\PreviousNext\Ds\Common\Vo\MenuTree\MenuTree, MenuItem>|null $linkToMenuLinkData
+   * @phpstan-param \SplObjectStorage<\PreviousNext\Ds\Common\Atom\Link\Link, MenuItem>|null $linkToMenuLinkData
    */
   public function __construct(
     public readonly MenuTrees $menuTrees,
