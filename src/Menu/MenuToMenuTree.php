@@ -91,6 +91,8 @@ final class MenuToMenuTree {
    *   - All menus under that root item are made available (unless $specification is modified).
    *   - The deepest active link is made available.
    *
+   * When the current page is not in an active trail, root link and menu trees will be empty.
+   *
    * Example:
    *
    * - A
@@ -128,6 +130,17 @@ final class MenuToMenuTree {
       menuTreeParameters: $menuTreeParameters,
       manipulators: $specification->manipulators,
     ));
+
+    if ($rootResult->activeLink === NULL) {
+      return new MenuTreeActiveRootItemResult(result: new MenuTreeResult(
+        menuTrees: new Common\Vo\MenuTree\MenuTrees(),
+        specification: $specification,
+        activeLink: NULL,
+        // Need cacheability so if/when this page is added to a menu it is invalidated.
+        cachability: $rootResult->cachability,
+        linkToMenuLinkData: NULL,
+      ), rootLink: NULL);
+    }
 
     $linkToMenuLinkData = $rootResult->linkToMenuLinkData[$rootResult->activeLink] ?? throw new \LogicException('Expected to exist.');
     $pluginIdOfRootMenuItem = $linkToMenuLinkData['original_link']->getPluginId();
