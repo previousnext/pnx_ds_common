@@ -3,7 +3,6 @@
     "type": "drupal-module",
     "require": {
         "drupal/components": "^3",
-        "drupal/dex_console": "^1",
         "drupal/pinto": "^0.6",
         "drupal/pinto_block": "^0.2",
         "previousnext/ds-common": "*",
