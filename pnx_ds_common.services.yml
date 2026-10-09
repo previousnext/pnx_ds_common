@@ -2,6 +2,7 @@ services:
   _defaults:
     autoconfigure: true
     autowire: true
+    public: false
 
   Drupal\pnx_ds_common\Components\PnxDsCommonComponentsRegistry:
     decorates: components.registry
@@ -14,3 +15,14 @@ services:
       - [setPintoHookTheme, ['%pinto.internal.hook_theme%']]
 
   Drupal\pnx_ds_common\Menu\MenuToMenuTree: ~
+
+  # Canvas integration
+  # Conditionally removed in PnxDsCommonCompilerPass.
+  Drupal\pnx_ds_common\PintoCanvasRender\ElementSlots:
+    public: true
+  Drupal\pnx_ds_common\PintoCanvasRender\IdsCustomBehaviourResolver:
+    public: true # shouldnt be necessary / core bug
+  Drupal\pnx_ds_common\PintoCanvasRender\IdsGenericResolver:
+    public: true # shouldnt be necessary / core bug
+  Drupal\pnx_ds_common\PintoCanvasRender\IdsAccordionItemMutator:
+    public: true # shouldnt be necessary / core bug
