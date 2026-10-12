@@ -14,7 +14,8 @@ services:
     calls:
       - [setPintoHookTheme, ['%pinto.internal.hook_theme%']]
 
-  Drupal\pnx_ds_common\Menu\MenuToMenuTree: ~
+  Drupal\pnx_ds_common\Menu\MenuToMenuTree:
+    public: true
 
   # Canvas integration
   # Conditionally removed in PnxDsCommonCompilerPass.
